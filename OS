@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+        #Description: This script is to verify the OS we're running on.
+        #Author: Fleur Yeboah
+        #Date : March 2,2022
+
+echo " Please wait as we verify the OS..."
+sleep 2
+echo
+
+OS=`cat /etc/os-release |grep ^ID= |awk -F'"' '{print$2}'`   
+if
+[ $OS = centos ]
+then 
+echo "This system is centos."
+exit
+if
+[ $OS = Ubuntu ]
+then 
+echo "This system is Ubuntu"
+else
+echo " System unknown."
+fi
+fi
